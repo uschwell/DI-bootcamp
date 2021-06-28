@@ -1,0 +1,32 @@
+.hTemp {
+	text: bold;
+	text-decoration: underline;
+	margin-left: 40px;
+}
+
+
+ul {
+  list-style-position: inside;
+  margin-left: 40px;
+}
+
+.center{
+	text-align: center;
+}
+
+.color1{
+	color: red;
+}
+
+.color2{
+	color: black;
+}
+
+.centerColor{
+	text: bold;
+	border: 5px solid;
+}
+
+table, th, td {
+  border: 1px solid black;
+}

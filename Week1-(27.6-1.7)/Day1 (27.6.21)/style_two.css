@@ -1,0 +1,20 @@
+	h1{
+		color: red; border: 5px solid black;
+	}
+
+	.secondparagraph {
+		background-color: pink;
+	}
+
+	.ocean {
+		background-color: blue;
+	}
+
+	#second {
+		border: 2px solid red;
+	}
+
+	section h1 {
+		background-color: yellow;
+		font-weight: bold;
+	}
