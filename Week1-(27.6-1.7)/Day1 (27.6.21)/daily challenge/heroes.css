@@ -1,0 +1,25 @@
+
+.backg-image {
+background-image: url("https://i.pinimg.com/originals/2c/3f/d7/2c3fd77862947349f29dc9a08d66ce7f.jpg");
+background-color: black;
+height: 3000px;
+background-position: center;
+background-repeat: no-repeat;
+background-size: cover;
+position: relative;
+}
+ 
+.backg-text {
+text-align: center;
+position: relative;
+top: 50%;
+left: 50%;
+transform: translate(-50%, -50%);
+color: white;
+}
+
+.enhance{
+	text-align: left;
+	font-size: 80px;
+	font-style: bold;
+}
