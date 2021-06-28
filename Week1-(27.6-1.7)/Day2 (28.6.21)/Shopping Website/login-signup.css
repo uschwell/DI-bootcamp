@@ -2,3 +2,10 @@
 	text outline-offset: 100px;
 }
 
+.backColor{
+	background-color: lightgrey;
+	text-align: center;
+	padding: 0px;
+	width: 50%;
+}
+
