@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>Sign Up</title>
+</head>
+
+
+<!-- I decided to use this script to thank people when the click the Submit button -->
+<script>
+function msg() {
+  alert("Thanks for Signing Up!");
+}
+
+</script>
+
+<body>
+	<h1 style="text-align: center;">Sign Up</h1>
+
+<div style="background-color: lightgrey; width: 40%;">
+	<!-- First Name -->
+	<div class="lineup">
+		<label for="fname">First name:</label>
+		<input type="text" id="fname" name="fname">
+	</div>
+
+	<!-- Last Name -->
+	<div class="lineup">
+		<label for="lname">Last name:</label>
+		<input type="text" id="lname" name="lname">
+	</div>
+
+	<!-- UserName -->
+	<div class="lineup">
+		<label for="usename">Username:</label>
+		<input type="text" id="usename" name="usename"><br>
+	</div>
+
+	<!-- Email -->
+	<div class="lineup">
+		<label for="email">Enter email:</label>
+		<input type="email" id="email" name="email">
+	</div>
+
+	<!-- Password -->
+	<div class="lineup">
+		<label for="pwd">Password:</label>
+	<input type="password" id="pwd" name="pwd">
+	</div>
+
+	<!-- Submit data -->
+	<input type="button" value="Submit" onclick="msg()">
+</div>
+
+</body>
+</html>

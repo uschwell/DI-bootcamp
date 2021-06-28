@@ -1,0 +1,14 @@
+.photoPrice{
+	display: inline-block;
+	padding: 20px;
+	text-align: center;
+}
+
+img{
+	height: 200px;
+}
+
+.photoRow{
+	display: inline-block;
+	padding: 5px;
+}
