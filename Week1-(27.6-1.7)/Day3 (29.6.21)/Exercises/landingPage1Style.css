@@ -1,0 +1,52 @@
+	body {
+  background-image: url('https://desenio.eu/bilder/artiklar/zoom/8450_2.jpg?imgwidth=435&qt=');
+
+
+}
+
+body div.container{
+	height: 100vh;
+	width: 100vw;
+	display: grid;
+	grid-template-rows: repeat(4, [row] 1fr) ;
+	grid-template-columns:repeat(3, [col] 1fr);
+}
+
+.header{
+	grid-area: 1/ 1 / span 1 / span 3;
+	text-align: center;
+	font-size: 20px;
+	font-style: bold;
+
+}
+
+.top{
+	grid-area: 2/ 1 / span 1 / span 3;
+	display: flex;
+	flex-direction: row;
+	flex-wrap: nowrap;
+	justify-content: space-around;
+	text-align: center;
+}
+
+.topPurple{
+	font-size: 30px;
+	color: purple;
+
+}
+
+.bottomcol1{
+	grid-area: 3 / 1 / span 2 / span 1;
+
+	background-color: red;
+}
+
+.bottomcol2{
+	grid-area: 3 / 2 / span 2 / span 1;
+	background-color: yellow;
+}
+
+.bottomcol3{
+	grid-area: 3 / 3 / span 2 / span 1;
+	background-color: green;
+}

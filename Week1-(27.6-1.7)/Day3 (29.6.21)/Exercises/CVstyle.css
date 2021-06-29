@@ -1,0 +1,47 @@
+.container{
+	display: grid;
+	height: 800px;
+	width: 600px;
+	grid-template-columns: 1r 2r;
+	grid-template-rows: 1r 3r;
+	border: 10px darkgrey ridge;
+}
+
+.topBar{
+	grid-area: 1 / 1 / span 1 / span 3;
+	background-color: lightgrey;
+	display: flex;
+	justify-content: space-around;
+	flex-direction: column;
+	text-align: left;
+	border-bottom: darkgrey 10px double;
+
+}
+
+.bottomLeft{
+	grid-area: 2 / 1 / span 3 / span 1;
+	background-color: lightgrey;
+	border-right: darkgrey 10px double;
+	display: flex;
+	justify-content: space-around;
+	flex-direction: column;
+
+}
+
+.bottomRight{
+	grid-area: 2 / 2 / span 3 / span 2;
+	background-color: lightgrey;
+	display: flex;
+	justify-content: space-around;
+	flex-direction: column;
+
+}
+
+.insideGrid{
+	display: flex;
+	flex-direction: column;
+	flex-wrap: wrap;
+	background-color: darkgrey;
+	justify-content: space-between;
+	text-align: center;
+}
