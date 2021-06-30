@@ -1,28 +1,25 @@
 .container{
 	display: grid;
-	height: 90vh;
-	width: 70vw;
+	height: 100vh;
+	width: 100vw;
 
 
 
 	grid-template-columns: repeat(3, 1fr);
-	grid-template-rows: repeat(7, 1fr);
+	grid-template-rows: repeat(5, 1fr);
 	gap: 5px;
 	grid-template-areas: 
-	"Header Header Header"
-	"Hero Main_Content Main_Content"
-	"Hero Main_Content Main_Content"
-	"Sidebar Main_Content Main_Content"
-	"Sidebar Extra_Content Extra_Content"
-	"Related_Images Related_Images Related_Posts"
-	"Footer Footer Footer";
-	margin-left: 15vw;
+	"One One One"
+	"Two Three Four"
+	"Two Five Five"
+	"Six Six Seven"
+	"Eight Eight Eight";
 }
 
 
-.Header{
-	grid-area: Header;
-	background-color: blue;
+.One{
+	grid-area: One;
+	background-color: maroon;
 	text-align: center;
 	color: white;
 	font-size: 40px;
@@ -32,8 +29,8 @@
 	align-items: center;
 }
 
-.Hero{
-	grid-area: Hero;
+.Two{
+	grid-area: Two;
 	background-color: mediumpurple;
 	text-align: center;
 	color: white;
@@ -44,9 +41,9 @@
 	align-items: center;
 }
 
-.Main_Content{
-	grid-area: Main_Content;
-	background-color: yellow;
+.Three{
+	grid-area: Three;
+	background-color: blueviolet;
 	text-align: center;
 	color: white;
 		font-size: 40px;
@@ -56,8 +53,8 @@
 	align-items: center;
 }
 
-.Sidebar{
-	grid-area: Sidebar;
+.Four{
+	grid-area: Four;
 	background-color: lightseagreen;
 	text-align: center;
 	color: white;
@@ -68,9 +65,9 @@
 	align-items: center;
 }
 
-.Extra_Content{
-	grid-area: Extra_Content;
-	background-color:grey;
+.Five{
+	grid-area: Five;
+	background-color: deeppink;
 	text-align: center;
 	color: white;
 	font-size: 40px;
@@ -80,9 +77,9 @@
 	align-items: center;
 }
 
-.Related_Images{
-	grid-area: Related_Images;
-	background-color:darkgreen;
+.Six{
+	grid-area: Six;
+	background-color:maroon;
 	text-align: center;
 	color: white;
 	font-size: 40px;
@@ -92,9 +89,9 @@
 	align-items: center;
 }
 
-.Related_Posts{
-	grid-area: Related_Posts;
-	background-color: pink;
+.Seven{
+	grid-area: Seven;
+	background-color: mediumpurple;
 	text-align: center;
 	color: white;
 	font-size: 40px;
@@ -104,9 +101,9 @@
 	align-items: center;
 }
 
-.Footer{
-	grid-area: Footer;
-	background-color:orange;
+.Eight{
+	grid-area: Eight;
+	background-color:blueviolet;
 	text-align: center;
 	color: white;
 	font-size: 40px;
