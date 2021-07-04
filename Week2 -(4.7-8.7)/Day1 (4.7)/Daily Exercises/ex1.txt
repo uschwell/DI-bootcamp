@@ -1,0 +1,25 @@
+534
+
+5-4
+
+0
+
+5
+
+JavaScript
+
+  ------(will represent as _ _)
+
+ 0 -------(shown as _0)
+
+2
+
+1
+
+1
+
+-1
+
+-1
+
+No Idea (and the check says NA)
