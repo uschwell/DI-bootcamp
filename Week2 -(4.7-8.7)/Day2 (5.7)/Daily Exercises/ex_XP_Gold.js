@@ -1,37 +1,37 @@
 		//EX1- The World Translator
 
 
-// let languge=prompt("What language do you speak? ");
-// languge=languge.toLowerCase();
+let languge=prompt("What language do you speak? ");
+languge=languge.toLowerCase();
 
-// if (languge=='french'){
-// 	console.log("Bonjour");
-// }else if(languge=='english'){
-// 	console.log("Hello");
-// }else if(languge=='hebrew'){
-// 	console.log("Shalom");
-// }else{
-// 	console.log("01110011 01101111 01110010 01110010 01111001");
-// }
-// //note: you guys think you're pretty funny don't you? "Sorry??" :D
+if (languge=='french'){
+	console.log("Bonjour");
+}else if(languge=='english'){
+	console.log("Hello");
+}else if(languge=='hebrew'){
+	console.log("Shalom");
+}else{
+	console.log("01110011 01101111 01110010 01110010 01111001");
+}
+//note: you guys think you're pretty funny don't you? "Sorry??" :D
 
 
 			//EX2- The Grade Assigner
-// let grade=prompt("What is your Grade? ");
+let grade=prompt("What is your Grade? ");
 
-// if(grade>90){
-// 	console.log("A");
-// }else if((90>=grade)&&(grade>80)){
-// 	console.log("B");
-// }else if((80>=grade)&&(grade>=70)){
-// 	console.log("C");
-// }else if(70>grade){
-// 	console.log("D");
-// }
-// //catch an incorrect input
-// else{
-// 	console.log("incorrect input");
-// }
+if(grade>90){
+	console.log("A");
+}else if((90>=grade)&&(grade>80)){
+	console.log("B");
+}else if((80>=grade)&&(grade>=70)){
+	console.log("C");
+}else if(70>grade){
+	console.log("D");
+}
+//catch an incorrect input
+else{
+	console.log("incorrect input");
+}
 
 
 					//EX3- Verbing
