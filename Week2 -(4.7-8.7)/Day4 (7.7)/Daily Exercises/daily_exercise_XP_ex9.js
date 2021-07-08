@@ -52,6 +52,7 @@ function rentalCarCost(days){
 		//if the input is incorrect we keep asking until we get a correct input
 		while(isNaN(days)){
 			days =prompt("I'm sorry, could you repeat that? How many days do you want the car for?");
+			days=parseInt(days);
 		}
 		let totalCost=(days*40);
 		if(days>10){
