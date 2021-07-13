@@ -1,27 +1,39 @@
-const dragElement=document.getElementById('container');
+//NOTES FOR CHECKER (look at top of index_XPGold.html)
+
+
+const dragElements= document.getElementsByClassName('boxes');
 const area = document.getElementById('container');
-function setSelected(a){
-  dragElement=a;
+
+for(let i=0; i<dragElements.length; i++){
+   dragElements[i].addEventListener('dragstart', dragstart_handler);
+
+   dragElements[i].addEventListener('drag', function(e){
+      // let x=e.clientX;
+      // let y=e.clientY;
+      // console.log(`drag: ${x} ${y}`)
+    })
+     dragElements[i].addEventListener('dragend',function(e){
+    let x=e.clientX;
+    let y=e.clientY;
+    // console.log(`dragend: ${x} ${y}`);
+    dragElements[i].style.left = x+'px';
+    dragElements[i].style.top = y+ 'px';
+  })
 }
 
-dragElement.addEventListener('dragstart', dragstart_handler);
-//area.addEventListener('dragover',dragover_handler);
-area.addEventListener('drop',drop_handler);
-function dragstart_handler(e){
-  // e.preventDefault();
-  // console.log(e.target.id);
+ //area.addEventListener('drop',drop_handler);
+
+
+ function dragstart_handler(e){
+   //e.preventDefault();
   e.dataTransfer.setData('text/plain',e.target.id);
 }
-function dragover_handler(e){
-  // console.log('over');
-  e.preventDefault();
-  e.dataTransfer.dropEffect = 'link'
-  area.classList.add('highlight');
-}
+
 function drop_handler(e){
   e.preventDefault();
-  area.classList.remove('highlight');
-  const data = e.dataTransfer.files;//getData('text/plain')
+  console.log("dropped");
+  //area.classList.remove('highlight');
+  let data = e.dataTransfer.getData('text/plain')
   console.log(data);
-  // e.target.appendChild(document.getElementById(data))
+  e.target.appendChild(document.getElementById(data))
 }

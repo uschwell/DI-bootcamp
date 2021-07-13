@@ -1,4 +1,17 @@
 
+
+<!-- NOTE FOR CHECKER:
+  I did not quite manage to solve the starting-placement issue. 
+  I had to leave them as position:absolute in order to be able to drag the boxes freely
+  Thoughts: possible solution- automate box creation AND placement in the javascript. (i.e: create a loop that performs childCreate() and childAppend() 26 times. each time iterating the letter, properties, AND the starting position) I did not have the time to attempt this method (yet)
+ -->
+
+
+
+
+
+
+
 <!DOCTYPE html>
     <html>
     <head>
@@ -6,14 +19,18 @@
         #container {
           width: 800px;
           height: 800px;
-          position: relative;
+          position: absolute;
           background: palegreen;
         }
-        #boxes {
+        .boxes {
           width: 50px;
           height: 50px;
           position: absolute;
           background-color: blueviolet;
+          border: solid black 5px;
+          padding: 5px;
+          text-align: center;
+          padding: 5px;
 
         }
 
@@ -22,10 +39,58 @@
     </head>
     <body>
         <div id="container">
-          <div class="boxes" id="boxA" draggable= 'true' onclick="setSelected(this)"></div>
-          <div class="boxes" id="boxB" draggable= 'true'></div>
-          <div class="boxes" id="boxC" draggable= 'true'></div>
-          <div class="boxes" id="boxD" draggable= 'true'></div>
+          <div class="boxes" id="boxA" draggable= 'true'>A</div>
+          <br>
+          <div class="boxes" id="boxB" draggable= 'true'>B</div>
+          <br>
+          <div class="boxes" id="boxC" draggable= 'true'>C</div>
+          <br>
+          <div class="boxes" id="boxD" draggable= 'true'>D</div>
+          <br>
+          <div class="boxes" id="boxE" draggable= 'true'>E</div>
+          <br>
+          <div class="boxes" id="boxF" draggable= 'true'>F</div>
+          <br>
+          <div class="boxes" id="boxG" draggable= 'true'>G</div>
+          <br>
+          <div class="boxes" id="boxH" draggable= 'true'>H</div>
+          <br>
+          <div class="boxes" id="boxI" draggable= 'true'>I</div>
+          <br>
+          <div class="boxes" id="boxJ" draggable= 'true'>J</div>
+          <br>
+          <div class="boxes" id="boxK" draggable= 'true'>K</div>
+          <br>
+          <div class="boxes" id="boxL" draggable= 'true'>L</div>
+          <br>
+          <div class="boxes" id="boxM" draggable= 'true'>M</div>
+          <br>
+          <div class="boxes" id="boxN" draggable= 'true'>N</div>
+          <br>
+          <div class="boxes" id="boxO" draggable= 'true'>O</div>
+          <br>
+          <div class="boxes" id="boxP" draggable= 'true'>P</div>
+          <br>
+          <div class="boxes" id="boxQ" draggable= 'true'>Q</div>
+          <br>
+          <div class="boxes" id="boxR" draggable= 'true'>R</div>
+          <br>
+          <div class="boxes" id="boxS" draggable= 'true'>S</div>
+          <br>
+          <div class="boxes" id="boxT" draggable= 'true'>T</div>
+          <br>
+          <div class="boxes" id="boxU" draggable= 'true'>U</div>
+          <br>
+          <div class="boxes" id="boxV" draggable= 'true'>V</div>
+          <br>
+          <div class="boxes" id="boxW" draggable= 'true'>W</div>
+          <br>
+          <div class="boxes" id="boxX" draggable= 'true'>X</div>
+          <br>
+          <div class="boxes" id="boxY" draggable= 'true'>Y</div>
+          <br>
+          <div class="boxes" id="boxZ" draggable= 'true'>Z</div>
+          <br>
         </div>
 
 
