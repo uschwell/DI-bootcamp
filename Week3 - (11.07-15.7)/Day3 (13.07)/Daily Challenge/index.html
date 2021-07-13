@@ -6,17 +6,29 @@
 
 	<link rel="stylesheet" href="ex1_style.css">
 </head>
+<style type="text/css">
+	#bannerPrint{
+  	width:480px;
+  	height: 200px;
+ 	margin: 100px auto;
+  	padding: 20px;
+  	background: lightgrey;
+	}
+
+</style>
 
 <body>
-	<div class="box" id="box"></div>
-	<button type="button" onClick="move()">Start</button>
-	<button type="button" onClick="stop()">Stop</button>
-	<button type="button" onClick="back()">Go Back</button>
-	<div class="box box2" id="box2" draggable='true'></div>
+	<h1>See Your name in Lights!</h1>
+	<div id='bannerPrint'>
+		<h1 id=fullText></h1>
+	</div>
+	<label>Please enter your name (alphabet letters-no spaces only please)</label>
+	<br>
+	<!-- note: This (lines 28-29) permits the adding of whole strings- for entering letter by letter-use input on lines 30-31 instead -->
+	<input type="text" name="inputBox" id="inputBox" onChange="textOnly()">
 
-	<p draggable='true' id='dragText'>Drag Me!</p>
-	<div id="drop-area"></div>
+	<!-- <input type="text" name="inputBox" id="inputBox" onkeyup="textOnly()"> -->
 
-	<script src="ex1.js"></script>
+	<script src="daily_challenge_ex1.js" ></script>
 </body>
 </html>
