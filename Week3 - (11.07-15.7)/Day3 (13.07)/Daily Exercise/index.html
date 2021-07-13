@@ -1,0 +1,48 @@
+
+<!DOCTYPE html>
+    <html>
+    <head>
+        <style>
+        #container {
+          width: 400px;
+          height: 400px;
+          position: relative;
+          background: yellow;
+        }
+        #animate {
+          width: 50px;
+          height: 50px;
+          position: absolute;
+          background-color: red;
+        }
+
+        #dragBox{
+        	width: 75px;
+        	height: 75px;
+        	position: absolute;
+        	background-color: lightblue;
+        }
+
+        #dragContainer{
+        	width: 400px;
+        	height: 100px;
+        	top: 50px;
+        	left: 200px;
+        	position: relative;
+        	background: palevioletred;
+        }
+        </style>
+
+    </head>
+    <body>
+        <p><button onclick="myMove()">Click Me</button></p>
+        <div id="container">
+          <div id="animate"></div>
+        </div>
+
+        <div id="dragContainer"></div>
+        <div id="dragBox" draggable='true'>Drag Me!</div>
+
+        	<script src="XP_daily_ex.js"></script>
+    </body>
+    </html>
