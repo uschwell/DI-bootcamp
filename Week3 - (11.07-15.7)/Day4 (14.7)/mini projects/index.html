@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title></title>
+
+	<link rel="stylesheet" href="mini_project1_style.css">
+</head>
+
+
+<body onload="addCanvas(), addBoxes(7,3)">
+	<!-- container for the entire screen -->
+	<div class="gridWhole">
+		<!-- Left Container (button panel) -->
+		<div class="leftContainer" style="inline-block" id="controlPanel">
+		<button class="clearBox" onclick="clearAll()">Clear</button>
+
+		</div>
+
+		<!-- Right Container -->
+		<div class="rightContainer" id="drawingSpace">
+			<!-- <button onclick="addCanvas()">click me!</button> -->
+		</div>
+	</div>
+	<script src="mini_project1.js" ></script>
+</body>
+</html>

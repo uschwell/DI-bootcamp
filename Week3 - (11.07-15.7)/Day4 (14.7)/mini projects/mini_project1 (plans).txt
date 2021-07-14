@@ -1,0 +1,10 @@
+define two types of boxes and two different containers
+
+the left container will contain one type of box (as divs) each with their own unique colors. 
+We will create an eventListener that listens for a 'click' on any of those boxes.
+If they are clicked then they will change a variable (selectedColor) to the relevant colors
+
+create a double for loop (rows +columns)that will create many many if the 2nd type of box. Append each one to the second container.
+create an eventLIstener and add each of these small boxes to it. 
+Upon recognizing a "mouse passing-over" any of these boxes an Event will be triggered that changes the background color of the box
+to be whatever the current "setColor" is.
