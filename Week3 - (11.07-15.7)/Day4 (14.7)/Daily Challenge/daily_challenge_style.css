@@ -1,0 +1,28 @@
+.all{
+	display: flex;
+	justify-content: center;
+}
+
+.wholeContainer{
+		flex-wrap: wrap;
+		flex-direction: column;
+		/*align-content: space-between;*/
+		width: 100vw; 
+		height: 100vh;
+		background-color: red;
+}
+
+.banner{
+	background-color: white;
+	align-self: center;
+	width: 50%;
+	flex-direction: column;
+	flex-wrap: wrap;
+}
+
+.listItem{
+	flex-direction: row;
+	background-color: white;
+	align-self: center;
+	width: 100%;
+}

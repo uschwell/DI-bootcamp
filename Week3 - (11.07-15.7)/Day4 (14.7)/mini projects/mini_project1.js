@@ -93,6 +93,7 @@ function clearAll(){
 	let temp2=drawSpace.getElementsByClassName("gridBox");
 	//reset the background color of the cnavas boxes to white
 	for(const i in gridBoxArray){
-		temp2[i].style.backgroundColor='white';
+		//temp2[i].style.backgroundColor='white';
+		gridBoxArray[i].style.backgroundColor='white';
 	}
 }
