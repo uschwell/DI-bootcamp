@@ -59,32 +59,47 @@ class Circle:
         t = turtle.Turtle()
         t.circle(self.radius)
 
-    
-def circle_sort(self,**args):
+
+
+
+
+def circle_sort(*args):
     "Receives a list of circles. Sorts them by size"
-    return args.sort()
+    circle_lambda=args
+    circle_lambda= sorted(circle_lambda, key = lambda circle : circle.radius)
+    return circle_lambda
 
 
 
 
 
-
-
+        #input the desired values
 value=input("Give a value (integer)")
 print("Define A Circle. You may use 'Diameter' (d) or 'Radius' (r) ")
 text=input("(d)/(r)")
 
 myCircle=Circle(text,value)
+    #print the area of the Circle
 print(myCircle.get_area())
 
-
 myCircle.print_circ()
+    #Note: added an uneeded input here to pause on the 'circle' screen
 input("press Enter to continue")
 
 circle2=Circle('r', 100)
 circle3=Circle('r', 5)
 circle4=Circle('r', 50)
+circle5=Circle('r',200)
 
-# myList=[myCircle,circle2,circle3,circle4]
-# print(circle_sort(myList))
+# circle2.add_circ(circle4)
+# print(circle2.radius)
 
+        #the list to be sorted (by radius size)
+myList=[circle2,circle5,circle3,circle4]
+temp=(circle_sort(*myList))
+
+    #print out the list (twice-once as objects, and once as radius values)
+for i in range(len(temp)):
+    print(temp[1])
+for i in range(len(temp)):
+    print(temp[1].radius)
