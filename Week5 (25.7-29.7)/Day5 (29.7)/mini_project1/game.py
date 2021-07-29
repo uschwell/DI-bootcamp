@@ -13,15 +13,12 @@ class Game:
         flag=True
         while(flag):
             entered=input("Please choose Rock, Paper, or Scissors: ")
-            try:
-                if(entered.lower()=='rock'):
-                    return 'rock'
-                elif(entered.lower=='paper'):
-                    return 'paper'
-                elif(entered.lower=='scissors'):
-                    return 'scissors'
-            except:
-                pass
+            if(entered.lower()=='rock'):
+                return 'rock'
+            elif(entered.lower()=='paper'):
+                return 'paper'
+            elif(entered.lower()=='scissors'):
+                return 'scissors'
 
     def get_computer_item(self):
         rand=random.randint(0,2)
@@ -68,11 +65,22 @@ class Game:
                 return 'win'
 
 
+def play():
+    newGame=Game()
+    user_input=newGame.get_user_item()
+    comp_input=newGame.get_computer_item()
+    result=newGame.get_game_result(user_input,comp_input)
+    if(result=='win'):
+        temp='won!'
+    elif(result=="loss"):
+        temp='lose.'
+    elif(result=='draw'):
+        temp='drew!'
+    print(f'You selected {user_input}. The Computer selected {comp_input}. You {temp}')
+    
+    return result
 
 
 
-
-
-myGame=Game()
-myGame.get_user_item()
+# play()
 
