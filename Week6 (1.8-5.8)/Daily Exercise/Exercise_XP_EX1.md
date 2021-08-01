@@ -1,4 +1,6 @@
-
+--------Run these first parts (lines 1-31) exactly once- lines 4-12 to create the Database
+--------lines 12-34 to create the 2 tables and insert all the data into them
+--------lines 35-41 will (when commented in) run each of the desired search/retrieve commands individually
 -- CREATE DATABASE public
 --     WITH 
 --     OWNER = postgres
