@@ -1,0 +1,22 @@
+SELECT 	SELECT avg(number_oscars) FROM actors;
+
+SELECT DISTINCT first_name FROM actors ORDER BY number_oscars;
+
+
+
+
+
+Exercises for "Update Delete, Alter"
+
+UPDATE actors SET age='1970-01-01' WHERE first_name='Matt' AND last_name='Damon';
+
+
+UPDATE actors SET age='1950-01-01' WHERE first_name=' Samwise' AND last_name=' Gamgee'
+RETURNING 
+    actor_id,
+    first_name, 
+    last_name,
+    age; 
+	
+	
+ALTER TABLE actors RENAME COLUMN age TO birthdate;
