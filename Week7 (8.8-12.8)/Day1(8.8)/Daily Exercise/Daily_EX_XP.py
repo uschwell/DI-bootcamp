@@ -54,20 +54,66 @@ from datetime import datetime
 
 # ###############Step 6
 to_read = pd.read_csv('https://raw.githubusercontent.com/selva86/datasets/master/Cars93_miss.csv')
-to_read.head()
-print(to_read)
-# for col in to_read.columns:
-#     print(col)
-
+# print(to_read)
+# data_Types=to_read.dtypes
+# print(data_Types)
+#### print(data_Types.keys)
+### item_counts = ["col1"].value_counts()
+### print(item_counts)
 
 # ###############Step 7
+# to_read.drop("EngineSize", axis=1, inplace=True)
+# del to_read['Length']
 
+# ####check if EngineSize still exists
+# if not "EngineSize" in to_read:
+#     print("EngineSize has been removed")
+# #####check if EngineSize still exists
+# if not "Length" in to_read:
+#     print("Length has been removed")
 
 # ###############Step 8
+# df1 = pd.DataFrame({'fruit': ['apple', 'banana', 'orange'] * 3,
+#                     'weight': ['high', 'medium', 'low'] * 3,
+#                     'price': np.random.randint(0, 15, 9)})
+
+# df2 = pd.DataFrame({'pazham': ['apple', 'orange', 'pine'] * 2,
+#                     'kilo': ['high', 'low'] * 3,
+#                     'price': np.random.randint(0, 15, 6)})
+
+# ###### new_df = pd.merge(df1, df2,  how='cross', left_on=True, right_on =True)
+# #Merge the DataFrames
+# df_merged = pd.merge(df1, df2, how='inner', left_index=True, right_index=True, suffixes=('', '_drop'))
+
+# #Drop the duplicate columns
+# df_merged.drop([col for col in df_merged.columns if 'drop' in col], axis=1, inplace=True)
+# print('---------------------------------------')
+# print(df1)
+# print('---------------------------------------')
+# print(df2)
+# print('---------------------------------------')
+# print(df_merged)
+# print('---------------------------------------')
+
 
 
 # ###############Step 9
 
+df = pd.DataFrame(["STD,City\tState",
+"33,Kolkata\tWest Bengal",
+"44,Chennai\tTamil Nadu",
+"40,Hyderabad\tTelengana",
+"80,Bangalore\tKarnataka"], columns=['row'])
+
+# Desired Output:
+# 0 STD        City        State
+# 1  33     Kolkata  West Bengal
+# 2  44     Chennai   Tamil Nadu
+# 3  40   Hyderabad    Telengana
+# 4  80   Bangalore    Karnataka
+df2 = pd.DataFrame(df.row.str.split(' ',1).tolist(),columns = ['STD','City','State'])
+
+print(df2)
 # ###############Step 10
 
 # ###############Step 11
