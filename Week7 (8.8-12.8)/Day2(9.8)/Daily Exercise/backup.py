@@ -3,49 +3,33 @@ import numpy as np
 import pandas as pd
 import matplotlib.pyplot as plt
 import seaborn as sns
-
-to_read = pd.read_csv('https://raw.githubusercontent.com/datasciencedojo/datasets/master/titanic.csv')
-
-# data_Types=to_read.Series
-
-# print(data_Types)
-
-########continuous:PassengerId, Name, Age, ticket, fare, Cabin,
-########categorical:Survived, Sex, Pclass,SibSp,Parch, Embarked
-########Ordinal:Passenger-Id
-########Nominal:Survived,Sex,
-
-###We have 3 categories that we have discovered affected your survival changes.
-to_read[['Pclass', 'Survived']].groupby(['Pclass'], as_index=False).mean().sort_values(by='Survived', ascending=False)
-to_read[["Sex", "Survived"]].groupby(['Sex'], as_index=False).mean().sort_values(by='Survived', ascending=False)
-to_read[["SibSp", "Survived"]].groupby(['SibSp'], as_index=False).mean().sort_values(by='Survived', ascending=False)
+df = pd.read_csv('https://raw.githubusercontent.com/datasciencedojo/datasets/master/titanic.csv')
+# sns.catplot( "Sex", "Age", data=df, kind="box")
+# plt.show()
 
 
+train_df = pd.read_csv('https://raw.githubusercontent.com/datasciencedojo/datasets/master/titanic.csv')
+test_df = pd.read_csv('https://raw.githubusercontent.com/datasciencedojo/datasets/master/titanic.csv')
+# combine = [train_df, test_df]
+
+# print(train_df.columns.values)
+# train_df.describe(include=['O'])
 
 
-###lets plot out survival chance by age (separated by gender)
-###As we can see below, 
-# grid = sns.FacetGrid(to_read, col='Survived', row='Pclass', height=4.4, aspect=1.6)
-# grid.map(plt.hist, 'Age', alpha=.5, bins=20)
-# grid.add_legend();
+# train_df[['Pclass', 'Survived']].groupby(['Pclass'], as_index=False).mean().sort_values(by='Survived', ascending=False)
+# print(train_df.count("Survived"))
+# train_df[["Sex", "Survived"]].groupby(['Sex'], as_index=False).mean().sort_values(by='Survived', ascending=False)
+# train_df[["Parch", "Survived"]].groupby(['Parch'], as_index=False).mean().sort_values(by='Survived', ascending=False)
 
 
-
-
-###lets plot out survival chance by age (separated by gender)
-# temp=to_read[["Sex", "Survived"]].groupby(['Sex'], as_index=False).mean().sort_values(by='Survived', ascending=False)
-# temp2=to_read[["Age", "Survived"]].groupby(['Age'], as_index=False).mean().sort_values(by='Survived', ascending=False)
-# temp2
-# temp1
-# grid = sns.FacetGrid(to_read, col='Survived', row='Sex', height=4.4, aspect=1.6)
-# grid.map(plt.hist, 'Age', alpha=.5, bins=20)
+# grid = sns.FacetGrid(train_df, row='Embarked', height=2.2, aspect=1.6)
+# grid.map(sns.pointplot, 'Pclass', 'Survived', 'Sex', palette='deep')
 # grid.add_legend()
-# sns.lineplot(data=temp2, x="Age", y="Survived")
 
+#####Drop the Nan values (for plotting requirement)
+train_df.dropna()
+#####Plot how Age affected survival chances (separated by gender)
+###As expected, extremely young, or extremely old passengers were in greater danger for survivng
+sns.lineplot(x = "Age", y = "Survived",hue="Sex", data = train_df, estimator=(lambda x: len(x) / (2*len(df)) * 100))
 
-grid = sns.FacetGrid(to_read, row='Sex', height=4.4, aspect=1.6)
-grid.map(sns.pointplot, 'Age', 'Survived', 'Sex', palette='deep')
-grid.add_legend()
-
-ax = sns.pointplot(x="Age", y="Survived", data=to_read, estimator=lambda x: len(x) / len(to_read) * 100)
-ax.set(ylabel="Percent")
+# sns.displot(train_df, x="Age",y="Survived", kind="line")
