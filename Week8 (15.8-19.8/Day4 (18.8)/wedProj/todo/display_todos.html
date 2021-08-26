@@ -1,0 +1,34 @@
+{% extends "base.html" %}
+{% block title %}display_todos{% endblock %}
+{% block content %}
+	<div class="container flex">
+		<div class="row">
+			<div class="col-3"></div>
+			<div class="col-6">
+				<h2>Task list</h2>
+				{% for task in task_list%}
+				
+				<ul>
+					<li>Title: {{task.title}}</li>
+                    <li>Details: {{task.details}}</li>
+                    <li>Date of Creation: {{task.date_creation}}</li>
+
+
+                    <li>Date of Completion: {{task.date_completion}}</li>
+                    {% if task.date_completion is '1/1/2000' %}
+                        <li>Not yet Completed</li>
+                    {% else %}
+                        <li> Completed On: {{task.date_completion}}</li>
+                    {% endif %}
+
+                    <li>Date of Deadline: {{task.deadline_date}}</li>
+                    <li>Categories: {{task.categories}}</li>
+				</ul>
+				<br>
+				<div class="dropdown-divider"></div>
+				{% endfor %}
+			</div>
+			<div class="col-3"></div>
+		</div>
+	</div>
+{% endblock %}

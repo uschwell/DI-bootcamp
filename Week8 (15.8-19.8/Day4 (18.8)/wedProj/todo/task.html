@@ -1,0 +1,21 @@
+{% extends "base.html" %}
+{% block title %}Task{% endblock %}
+{% block content %}
+	<h3>Singular Task:</h3>
+	<ul>
+		<li>Task: {{ToDo.title}}</li>
+        <li>Details: {{ToDo.details}}</li>
+		<li>Created On: {{ToDo.date_creation}}</li>
+
+        <li>Completed On: {{ToDo.date_completion}}</li>
+		{% if ToDo.date_completion is '1/1/2000' %}
+			<li>Completed Status: Not yet completed</li>
+		{% else %}
+			<li> Completed On: {{ToDo.date_completion}}</li>
+		{% endif %}
+
+
+        <li>Deadline: {{ToDo.deadline_date}}</li>
+        <li>Categories: {{ToDo.category}}</li>
+	</ul>
+{% endblock %}
