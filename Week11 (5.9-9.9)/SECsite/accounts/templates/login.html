@@ -3,9 +3,11 @@
 {% block content %}
 <h1>Login</h1>
 <form method="POST">
+    {%csrf_token%}
     <input type="text" name="userNameInput">
     <input type="password" name="passwordInput">
     <button>Login</button>
+    
 </form>
 
 {% endblock %}

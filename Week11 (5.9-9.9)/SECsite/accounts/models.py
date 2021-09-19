@@ -13,6 +13,6 @@ class Firm(models.Model):
     name=CharField(max_length=200)
 
 
-class Company(models.Model):
+class Client(models.Model):
     name=CharField(max_length=200)
     firm=ForeignKey(Firm, on_delete=models.CASCADE)

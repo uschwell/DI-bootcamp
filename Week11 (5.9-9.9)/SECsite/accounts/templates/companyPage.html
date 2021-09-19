@@ -1,0 +1,24 @@
+{% extends "base.html" %}
+{% block title %} {{user.profile.employed_by.name}} {% endblock %}
+{% block content %}
+
+<div class="row">
+    {%for client in user.profile.employed_by.client_set.all%}
+    <div class="card" style="width: 18rem;">
+        <div class="card-body">
+          <h5 class="card-title">{{client.name}}</h5>
+          <a href="#" class="card-link">Card link</a>
+          <a href="#" class="card-link">Another link</a>
+        </div>
+      </div>
+    {%endfor%}
+</div>
+
+<h1>Add Client</h1>
+<form method="POST">
+{%csrf_token%}
+{{f.as_p}}
+<button>Add Client</button>
+</form>
+
+{% endblock %}

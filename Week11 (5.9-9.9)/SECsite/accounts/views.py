@@ -1,24 +1,57 @@
 from django.http import request
-from django import template
-from django.shortcuts import render
+from django import forms, template
+from django.shortcuts import redirect, render
 from django.http import HttpResponse, HttpRequest
-from django.contrib.auth import authenticate, login
-
+from django.contrib.auth import authenticate, login, decorators
+from .forms import NewUserForm, NewClientForm
+from .models import Client, Profile
+from django.contrib.auth.models import User
 
 def login_view(request):
     if request.method=='POST':
         print('request POST error')
-        print(request.method.POST)
+        print(request.POST)
+        user=authenticate(username=request.POST.get('userNameInput'), password=request.POST.get('passwordInput'))
+        if user:
+            login(request, user)
+             #send us to relevant company page
+            return redirect('company_page')
 
-    return render(request,'login.html') 
+    return render(request,'login.html')
 
-
-class onLogin():
-    pass
 
 def main_page(request):
     if request.method=='POST':
         print('request POST error')
-        print(request.method.POST)
+        print(request.POST)
 
-    render(request, 'mainPage.html')
+    return render(request, 'mainPage.html')
+
+@decorators.login_required
+def register(request):
+    form = NewUserForm()
+    if request.method=='POST':
+        form=NewUserForm(request.POST)
+        if form.is_valid():
+            user=User.objects.create_user(**form.cleaned_data)
+            profile=Profile.objects.create(user=user, employed_by=request.user.profile.employed_by)
+             #redirect to relevant company page
+            return redirect('company_page')
+
+    return render(request, 'register.html', {'f':form, 'object_type':'new Employee'})
+
+
+@decorators.login_required
+def company_page(request):
+
+    form = NewClientForm()
+    if request.method=='POST':
+        form=NewClientForm(request.POST)
+        if form.is_valid():
+            client= form.save(commit=False)
+            client.firm=request.user.profile.employed_by
+            client.save()
+            #redirect to relevant company page
+            return redirect('mainPage')
+
+    return render(request, 'companyPage.html', {'f':form, 'object_type':'client'})
