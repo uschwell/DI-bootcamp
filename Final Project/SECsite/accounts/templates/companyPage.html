@@ -1,11 +1,6 @@
 {% extends "base.html" %}
 {% block title %} {{user.profile.employed_by.name}} {% endblock %}
 {% block content %}
-<style>
-  cardBorder{
-    border: 20px solid green;
-  }
-</style>
 
 
 
@@ -27,10 +22,12 @@
 <br>
                 <div class="row d-flex flex-column" style="background-color: wheat;">
                   <h1>This Area should Be the bulletin board</h1>
+                  {%for client in user.profile.employed_by.client_set.all%}
                   <br>
                   <br>
                   <br>
                   <br>
+                  {%endfor%}
                   <br>
                   <br>
                 </div>
@@ -39,26 +36,38 @@
 
 
             {#<!-- Right half of page -->#}
-          <div class="col-sm col-md col-xl panel-body panel-resizable mr-auto" style= "width: 50px;">
+          <div class="panel-body panel-resizable position-fixed-right car" style= "width: 900px;">
 
             {#<!--This is the Add Client code -->#}
             <div class="row" style="background-color: blue; text-align: right;">
-              <h1>Add Client</h1>
-              <form method="POST">
+              <h4>Add Client</h4>
               {%csrf_token%}
               {{f.as_p}}
               <button>Add Client</button>
               </form>
             </div>
 
+            <div class="tester">
+              <h1>Lets see now</h1>
+            </div>
+
+
+
+
+
+
             {#<!--Print all Clients -->#}
               {%for client in user.profile.employed_by.client_set.all%}
-              <div class="list-group overflow-auto" style="width: 18rem; background-color: whitesmoke;" style="border-style:solid; border-color: orange;">
-                  <div class="card-body cardBorder">
+              <div class="list-group overflow-auto" style="width: 18rem;">
+                  <div class="card-body">
                     <h5 class="card-title">{{client.name}}</h5>
                     <a href="#" class="card-link">Card link</a>
                     <a href="#" class="card-link">Another link</a>
                 </div>
+                <br>
+                <br>
+                <br>
+                <br>
               {%endfor%}
           </div>
   

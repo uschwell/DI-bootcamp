@@ -16,3 +16,8 @@ class NewClientForm(forms.ModelForm):
     class Meta:
         model=Client
         exclude=['firm']
+
+
+class NewNoteForm(forms.ModelForm):
+    # text_content = forms.CharField(blank=True, editable=True, widget=forms.Textarea(attrs={"rows":5, "cols":20}))
+    text_content = forms.CharField(blank=True, editable=True, widget=forms.Textarea)
