@@ -1,0 +1,50 @@
+{% extends "base.html" %}
+{% block title %} {{user.profile.employed_by.name}} {% endblock %}
+{% block content %}
+
+<div class="row">
+    {%for client in user.profile.employed_by.client_set.all%}
+    <div class="card" style="width: 18rem; background-color: lightslategray;">
+        <div class="card-body">
+          <h5 class="card-title">{{client.name}}</h5>
+          <a href="#" class="card-link">Card link</a>
+          <a href="#" class="card-link">Another link</a>
+        </div>
+      </div>
+    {%endfor%}
+</div>
+
+<h1>Add Client</h1>
+<form method="POST">
+{%csrf_token%}
+{{f.as_p}}
+<button>Add Client</button>
+</form>
+
+{#<!-- Main Page Section> -->#}
+<section class="container" style="background-color:grey;">
+          {#<!-- Left half of page -->#}
+          {#<!-- <h2 style="text-align: center; color: black;">Client List</h2> -->#}
+          <div class="row">
+              <div class="col-sm-12 col-md-4 col-xl-4 d-flex justify-content-center" style="border-right: darkcyan 10px solid; background-color: maroon;">
+                <img class="my-auto" src="images/headshot2.jpg" style="border-radius: 70%; max-width: 100%; height: auto; align-content: center;">
+              </div>
+
+
+
+              {#<!-- Right half of page -->#}
+              <div class="col-sm-12 col-md-8 col-xl-8">
+
+  
+              </div>
+          </div>
+  
+
+
+
+</section>
+
+
+
+
+{% endblock %}

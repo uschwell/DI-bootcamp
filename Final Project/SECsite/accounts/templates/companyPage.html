@@ -1,0 +1,73 @@
+{% extends "base.html" %}
+{% block title %} {{user.profile.employed_by.name}} {% endblock %}
+{% block content %}
+<style>
+  cardBorder{
+    border: 20px solid green;
+  }
+</style>
+
+
+
+
+{#<!-- Main Page Section> -->#}
+<div class="container-fluid d-flex justify-content-end" style="background-color: gainsboro; display: flex; height: 100vh; width: 100vw;">
+  <div class="row">
+          {#<!-- Left half of page -->#}
+              <div class="col-sm col-md col-xl flex-column d-flex align-items-stretch" style="border: darkcyan 10px solid; width: 100vw;">
+                <div class="row d-flex flex-column" style="background-color: white;">
+                    <h1>This Area is the personal info of the client</h1>
+                    <br>
+                    <br>
+                    <br>
+                    <br>
+                    <br>
+                    <br>
+                </div>
+<br>
+                <div class="row d-flex flex-column" style="background-color: wheat;">
+                  <h1>This Area should Be the bulletin board</h1>
+                  <br>
+                  <br>
+                  <br>
+                  <br>
+                  <br>
+                  <br>
+                </div>
+            </div>
+
+
+
+            {#<!-- Right half of page -->#}
+          <div class="col-sm col-md col-xl panel-body panel-resizable mr-auto" style= "width: 50px;">
+
+            {#<!--This is the Add Client code -->#}
+            <div class="row" style="background-color: blue; text-align: right;">
+              <h1>Add Client</h1>
+              <form method="POST">
+              {%csrf_token%}
+              {{f.as_p}}
+              <button>Add Client</button>
+              </form>
+            </div>
+
+            {#<!--Print all Clients -->#}
+              {%for client in user.profile.employed_by.client_set.all%}
+              <div class="list-group overflow-auto" style="width: 18rem; background-color: whitesmoke;" style="border-style:solid; border-color: orange;">
+                  <div class="card-body cardBorder">
+                    <h5 class="card-title">{{client.name}}</h5>
+                    <a href="#" class="card-link">Card link</a>
+                    <a href="#" class="card-link">Another link</a>
+                </div>
+              {%endfor%}
+          </div>
+  
+              </div>
+          </div>
+  </div> 
+</div>
+
+
+
+
+{% endblock %}
