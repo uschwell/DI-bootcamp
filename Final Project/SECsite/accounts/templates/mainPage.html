@@ -1,11 +1,18 @@
 {% extends "base.html" %}
 {% block title %}Company Main Page{% endblock %}
+
+{% block css %}
+<link rel="stylesheet" href="https://media.istockphoto.com/photos/eagle-extracted-from-american-1-bill-picture-id1323896623?s=612x612">
+ {% endblock %}
+
+
 {% block content %}
 
 {#<!-- <h1>Welcome {Company:username}</h1> -->#}
 {#<!-- <a href='{%url ""%}' -->#}
+<div class="background" style="background-color: lightskyblue; height: 100vh; width: 100vw; z-index: -2; opacity: 70%;">
 <h1 style="text-align: center;">Welcome to SEC-Reminder!</h1>
-<h3 style="text-align: center;">Never forget another filing!</h3>
-
-
+<h3 style="text-align: center;">Never miss another filing!</h3>
+<!-- <img class="watermark" src="https://media.istockphoto.com/photos/eagle-extracted-from-american-1-bill-picture-id1323896623?s=612x612" style="border-radius: 30%; opacity: 0.3; text-align: center; z-index: -1; height: 50%;"> -->
+</div>
 {% endblock %}

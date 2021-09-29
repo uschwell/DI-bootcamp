@@ -5,6 +5,7 @@
 <link rel="stylesheet" href="{% static 'accounts/css/tester.css' %}">
 <link rel="stylesheet" href="{% static 'accounts/css/myCSS.css' %}">
 <link rel="stylesheet" href="{% static 'accounts/js/resizeJS.js' %}">
+<link rel="stylesheet" href="{% static 'accounts/js/dateCheck.js' %}">
  {% endblock %}
 {% block content %}
 
@@ -15,11 +16,14 @@
 <div class="container-fluid d-flex justify-content-end" style="background-color: gainsboro; display: flex; height: 100vh; width: 100vw;">
   <div class="row">
           {#<!-- Left half of page -->#}
-              <div class="col-sm col-md col-xl flex-column d-flex align-items-stretch" style="border: darkcyan 10px solid; width: 100vw;">
-                <div class="row d-flex flex-column" style="background-color: white;">
+              <div class="col-sm col-md col-xl flex-column d-flex align-items-stretch" style="border: black solid; width: 100vw;">
+                <div class="row d-flex flex-column" style="background-color: whitesmoke;">
                     <h1 style="text-align: center;">Hello {% block name %} {{user.username}}  {% endblock %} welcome back</h1>
                     <br>
                     <br>
+                    {%for client in user.profile.employed_by.client_set.all%}
+                    <a href="#" class="card">{{client.name}} filing due in 3 Months</a>
+                    {%endfor%}
                     <br>
                     <br>
                     <br>
@@ -28,13 +32,16 @@
 <br>
                 <div class="row d-flex flex-column" style="background-color: wheat;">
                   <h1 style="text-align: center; background-color: #f8d490;">Personal Notepad</h1>
-                  {% include 'notePopup.html' with noteForm=f %}
+
+{# <!-- {% include 'notePopup.html' with noteForm=f %} -->#}
+                  
                   {%for notes in user.profile.notes.note_set.all%}
                   <br>
                   <br>
                   <br>
                   <br>
                   {%endfor%}
+
                   <br>
                   <br>
                 </div>
@@ -55,11 +62,13 @@
 
             {#<!--Print all Clients -->#}
               {%for client in user.profile.employed_by.client_set.all%}
+
+
               <div class="list-group overflow-auto" style="width: 18rem;">
                   <div class="cardStyle">
                     <h5 class="card-title">{{client.name}}</h5>
-                    <a href="#" class="card-link">Card link</a>
-                    <a href="#" class="card-link">Another link</a>
+                    <a href="#" class="card-link">Open</a>
+                    <button> </button>
                 </div>
               {%endfor%}
           </div>
