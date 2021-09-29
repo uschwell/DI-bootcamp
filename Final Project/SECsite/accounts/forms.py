@@ -20,4 +20,4 @@ class NewClientForm(forms.ModelForm):
 
 class NewNoteForm(forms.ModelForm):
     # text_content = forms.CharField(blank=True, editable=True, widget=forms.Textarea(attrs={"rows":5, "cols":20}))
-    text_content = forms.CharField(blank=True, editable=True, widget=forms.Textarea)
+    text_content = forms.CharField(widget=forms.Textarea, max_length=500)

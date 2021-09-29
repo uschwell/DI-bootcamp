@@ -1,5 +1,11 @@
 {% extends "base.html" %}
+{% load static %}
 {% block title %} {{user.profile.employed_by.name}} {% endblock %}
+{% block css %}
+<link rel="stylesheet" href="{% static 'accounts/css/tester.css' %}">
+<link rel="stylesheet" href="{% static 'accounts/css/myCSS.css' %}">
+<link rel="stylesheet" href="{% static 'accounts/js/resizeJS.js' %}">
+ {% endblock %}
 {% block content %}
 
 
@@ -11,7 +17,7 @@
           {#<!-- Left half of page -->#}
               <div class="col-sm col-md col-xl flex-column d-flex align-items-stretch" style="border: darkcyan 10px solid; width: 100vw;">
                 <div class="row d-flex flex-column" style="background-color: white;">
-                    <h1>This Area is the personal info of the client</h1>
+                    <h1 style="text-align: center;">Hello {% block name %} {{user.username}}  {% endblock %} welcome back</h1>
                     <br>
                     <br>
                     <br>
@@ -21,8 +27,9 @@
                 </div>
 <br>
                 <div class="row d-flex flex-column" style="background-color: wheat;">
-                  <h1>This Area should Be the bulletin board</h1>
-                  {%for client in user.profile.employed_by.client_set.all%}
+                  <h1 style="text-align: center; background-color: #f8d490;">Personal Notepad</h1>
+                  {% include 'notePopup.html' with noteForm=f %}
+                  {%for notes in user.profile.notes.note_set.all%}
                   <br>
                   <br>
                   <br>
@@ -36,22 +43,12 @@
 
 
             {#<!-- Right half of page -->#}
-          <div class="panel-body panel-resizable position-fixed-right car" style= "width: 900px;">
+          <div class="panel-body panel-resizable position-fixed-right car">
 
             {#<!--This is the Add Client code -->#}
-            <div class="row" style="background-color: blue; text-align: right;">
-              <h4>Add Client</h4>
-              {%csrf_token%}
-              {{f.as_p}}
-              <button>Add Client</button>
-              </form>
+            <div class="row align-items-end" style="background-color: #95A5A6;">
+              {% include 'clientPopup.html' with clientForm=f %}
             </div>
-
-            <div class="tester">
-              <h1>Lets see now</h1>
-            </div>
-
-
 
 
 
@@ -59,15 +56,11 @@
             {#<!--Print all Clients -->#}
               {%for client in user.profile.employed_by.client_set.all%}
               <div class="list-group overflow-auto" style="width: 18rem;">
-                  <div class="card-body">
+                  <div class="cardStyle">
                     <h5 class="card-title">{{client.name}}</h5>
                     <a href="#" class="card-link">Card link</a>
                     <a href="#" class="card-link">Another link</a>
                 </div>
-                <br>
-                <br>
-                <br>
-                <br>
               {%endfor%}
           </div>
   
