@@ -1,0 +1,28 @@
+{% extends "base.html" %}
+{% load static %}
+{% block title %} {{user.profile.name}} 'User Settings' {% endblock %}
+{% block css %}
+<link rel="stylesheet" href="{% static 'accounts/css/myCSS.css' %}">
+ {% endblock %}
+
+
+
+
+
+
+ {% block content %}
+<div class="fluid-container" style="background-color: burlywood; height: 100vh; text-align: center;">
+    <input type="checkbox" checked data-toggle="toggle" data-on="Hello<br>World" data-off="Goodbye<br>World">
+
+
+<input type="toggle-switch" checked data-toggle="toggle" data-onstyle="primary">
+<br>
+<input type="checkbox" checked data-toggle="toggle" data-onstyle="secondary">
+<br>
+<input type="checkbox" checked data-toggle="toggle" data-on="Ready" data-off="Not Ready" data-onstyle="success" data-offstyle="danger">
+<input type="checkbox" checked data-toggle="toggle" data-onstyle="success">
+<br>
+</div>
+
+
+{% endblock %}

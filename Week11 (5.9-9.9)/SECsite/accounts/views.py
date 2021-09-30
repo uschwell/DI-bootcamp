@@ -3,7 +3,7 @@ from django import forms, template
 from django.shortcuts import redirect, render
 from django.http import HttpResponse, HttpRequest
 from django.contrib.auth import authenticate, login, decorators
-from .forms import NewUserForm, NewClientForm
+from .forms import NewUserForm, NewClientForm, NewNoteForm
 from .models import Client, Profile
 from django.contrib.auth.models import User
 
@@ -55,3 +55,28 @@ def company_page(request):
             return redirect('mainPage')
 
     return render(request, 'companyPage.html', {'f':form, 'object_type':'client'})
+
+
+
+@decorators.login_required
+def new_note(request):
+
+    form = NewNoteForm()
+    if request.method=='POST':
+        form=NewNoteForm(request.POST)
+        if form.is_valid():
+            note= form.save(commit=False)
+            # note.Profile=request.user.profile.employed_by
+            note.save()
+            #redirect to relevant company page
+            return redirect('mainPage')
+
+    return render(request, 'companyPage.html', {'f':form, 'object_type':'client'})
+
+
+
+
+
+@decorators.login_required
+def settings_page(request):
+    return render(request, 'settings.html')

@@ -13,6 +13,7 @@ class Note(models.Model):
 class Profile(models.Model):
     user=models.OneToOneField(User, on_delete=models.CASCADE)
     employed_by=models.ForeignKey('Firm', on_delete=models.PROTECT)
+    employee_mail= EmailField(blank=True, null=True)
     
 
 class Firm(models.Model):

@@ -72,3 +72,11 @@ def new_note(request):
             return redirect('mainPage')
 
     return render(request, 'companyPage.html', {'f':form, 'object_type':'client'})
+
+
+
+
+
+@decorators.login_required
+def settings_page(request):
+    return render(request, 'settings.html')
